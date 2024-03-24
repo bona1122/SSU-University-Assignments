@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입생로랑 리브르 오드퍼퓸</title>
+    <link href="상세정보.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="rating.css">
+    <style>
+    @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+    </style>
+</head>
+<body>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="메인화면.html">forFUME</a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="matching_flavor.html">맞춤향수찾기</span></li>
+            <li><a href="information.html">이론</a></li>
+            <li><a href="search.html">향수검색</a></li>
+            <li><span id="pick-link" OnClick="location.href='찜목록.html'">찜목록</span></li>
+        </ul>
+        <div class="navbar_login">
+            <i class="far fa-user"></i>
+            <div id="login-logout-btn"></div>
+            <div id="user-name" ></div>
+            </div>
+    </nav>
+
+
+        <div class="picture">
+        </div>
+
+
+        <div class="all">
+        <div class="outer">
+
+            <div class="img-outer">
+                <img src="media/YvesSaintLaurent_lived_Odd.jpg">
+            </div>
+
+
+            <div class="perfumeinfo">
+
+                <div>
+                <h2 class="name" id="perfume-id">입생로랑 리브르 오드퍼퓸(30ml)</h2>
+
+                <div class="star" id="star">
+
+            </div>
+        </div>
+
+            <div class="category-1">
+                <p >봄&nbsp;/&nbsp;플로럴&nbsp;/&nbsp;<i class="fas fa-venus"></i></p>
+            </div>
+
+            <hr>
+
+            <div class="category-2">
+                <p>
+                    <div class="category-inner">
+                    가격&nbsp; : 86,000원&nbsp;
+                </div>
+                <div class="heart" id="heart">
+                <i class="far fa-heart" ></i>
+            </div>
+            </p>
+            <br><br><br><br>
+            </div>
+
+
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="review">
+            <div class="review-top">
+                <p>제품후기</p>
+            </div>
+
+            <div class="input-review">
+                <div class="user-name" id="review-user-name">
+                </div>
+                <div class="row">
+                    <div class="rating">
+                        <div class="rating-input">
+                            <input type="radio" id="star5" name="rating" value="5"><label for="star5"></label>
+                            <input type="radio" id="star4" name="rating" value="4"><label for="star4"></label>
+                            <input type="radio" id="star3" name="rating" value="3"><label for="star3"></label>
+                            <input type="radio" id="star2" name="rating" value="2"><label for="star2"></label>
+                            <input type="radio" id="star1" name="rating" value="1"><label for="star1"></label>
+                        </div>
+                    </div>
+                <div class="confirm-rating" id="confirm-rating">등록</div>
+            </div>
+                <textarea name="review-content" id="review-content" cols="70" rows="5"></textarea>
+
+
+            <div id="review-container">
+
+            </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+<script src="main.js"></script>
+
+<script src="perfume.js"></script>
+
+<script>
+    function renderPerfumeRating() { //perfume.js의 perfumeData-'star' 띄우기 (향수마다 다르게)
+    console.log('rendering function')
+    var perfume_name = $('#perfume-id').text();
+
+    var perfume = null;
+
+    var perfume_info_json = localStorage.getItem('perfume_info');
+    var perfume_info = JSON.parse(perfume_info_json);
+
+    json_data = JSON.stringify(perfumeDataArray)
+    localStorage.setItem('perfume_info', json_data);
+
+    for(var j = 0; j < perfume_info.length; j++) {
+        var perfume_obj = perfume_info[j];
+        if(perfume_obj['name'] === perfume_name) {
+            perfume = perfume_obj;
+        }
+    }
+
+    var rating = '\
+        <div class="rating">\
+            <div class="rating-input">\
+                <input type="radio" id="product-star5" name="product-rating" value="5" disabled '+ ischecked(5, perfume['star']) +'><label for="product-star5"></label>\
+                <input type="radio" id="product-star4" name="product-rating" value="4" disabled '+ ischecked(4, perfume['star']) +'><label for="product-star4"></label>\
+                <input type="radio" id="product-star3" name="product-rating" value="3" disabled '+ ischecked(3, perfume['star']) +'><label for="product-star3"></label>\
+                <input type="radio" id="product-star2" name="product-rating" value="2" disabled '+ ischecked(2, perfume['star']) +'><label for="product-star2"></label>\
+                <input type="radio" id="product-star1" name="product-rating" value="1" disabled '+ ischecked(1, perfume['star']) +'><label for="product-star1"></label>\
+            </div>\
+        </div>\
+    '
+
+    $('#star').html(rating);
+}
+
+renderPerfumeRating();
+
+
+
+
+
+
+    function renderReviewUserName() { //댓글 달기위해 로그인 정보 불러오기
+    var user_name = $('#review-user-name');
+
+    var login_name = getCookie('login_user');
+
+    user_name.text(login_name);
+}
+
+renderReviewUserName();
+
+function onClickConfirmRating() { //댓글 등록하는 함수 - 이름, 별점, 텍스트
+    var perfume_id = $('#perfume-id').text();
+    var user_name = $('#review-user-name').text();
+    var review_content = $('#review-content').val();
+
+    // rating 읽어오기
+    var stars = document.querySelectorAll('input[name="rating"]');
+    var checked_star = null;
+    for(var i = 0; i < stars.length; i++) {
+        var star = stars[i];
+        if(star.checked) {
+            checked_star = star;
+        }
+    }
+    var rating = checked_star.value; 
+
+    var rating = {
+        'nickname': user_name,
+        'rating': rating,
+        'content': review_content
+    }
+
+    // 1. review json 읽기
+    var review_json = localStorage.getItem("review");
+
+    var review_list = new Array();
+    if(review_json) {
+        review_list = JSON.parse(review_json); 
+    }
+
+    // 2. 이 상품에 대한 object 읽기
+    var review_exist = false;
+    for(var i = 0; i < review_list.length; i++) {
+        if(Object.keys(review_list[i])[0] === perfume_id) {
+            review_list[i][perfume_id].push(rating);
+            review_exist = true;
+        }
+    }
+
+    if(review_exist === false) {
+        var review_obj = {};
+        review_obj[perfume_id] = []; 
+        review_obj[perfume_id].push(rating);
+
+        review_list.push(review_obj);
+    }
+
+
+    review_json = JSON.stringify(review_list);
+    localStorage.setItem('review', review_json);
+
+
+    alert('리뷰가 등록 되었습니다');
+    location.reload();
+}
+$('#confirm-rating').click(onClickConfirmRating);
+
+function onClickHeartBtn() {   //찜 버튼 누르는 함수
+    var perfume_id = $('#perfume-id').text();
+    var nickname = getCookie('login_user');
+
+    var user_info_json = localStorage.getItem('user_info');
+    var user_info = JSON.parse(user_info_json);
+
+    for(var i = 0; i < user_info.length; i++) {
+        var user_obj = user_info[i];
+        if(user_obj['nickname'] === nickname) {
+            if(user_obj['shopping_list']) {
+                if(!user_obj['shopping_list'].includes(perfume_id)) {
+                    user_obj['shopping_list'].push(perfume_id);
+                }
+            } else {
+                user_obj['shopping_list'] = [perfume_id];
+            }
+        }
+    }
+
+    user_info_json = JSON.stringify(user_info);
+    alert('찜등록이 완료되었습니다');
+    localStorage.setItem('user_info', user_info_json);
+} // user_info에 저장 (개발자도구 application 들어가서 user_info라는 key에서 해당 유저의 쇼핑리스트를 보면 들어가있는게 확인됨)
+
+$('#heart').click(onClickHeartBtn);
+
+
+function ischecked(base, star) {
+    if(base === Math.floor(star)) {
+        return 'checked';
+    } else {
+        return '';
+    }
+}
+
+
+function renderReview() { // 댓글 별점 달고 저장하는 함수
+    // 1. perfume 이름 가져오기
+    var perfume_name = $('#perfume-id').text();
+
+    // 2. localstorage - review 에서 해당 데이터 가져오기
+    var review_data_json = localStorage.getItem('review');
+    var review_data = JSON.parse(review_data_json);
+
+    var review_list = null;
+    for(var i = 0; i < review_data.length; i++) {
+        var review_data_obj = review_data[i];
+
+        if(Object.keys(review_data_obj)[0] === perfume_name) {
+            review_list = review_data_obj;
+        }
+    }
+
+    var review_list = review_list[perfume_name];
+
+    var review_item_result = "";
+    for(var i = 0; i < review_list.length; i++) {
+        var review = review_list[i];
+
+        var review_item = '\
+            <div class="review-header">\
+                <span class="user-name">'+ review['nickname'] +'</span> | \
+                <div class="rating">\
+                    <div class="rating-input">\
+                        <input type="radio" id="star5-'+ i +'" name="rating-'+ i +'" value="5" disabled '+ ischecked(5, review['rating']) +'><label for="star5-'+ i +'"></label>\
+                                        <input type="radio" id="star4-'+ i +'" name="rating-'+ i +'" value="4" disabled '+ ischecked(4, review['rating']) +'><label for="star4-'+ i +'"></label>\
+                                        <input type="radio" id="star3-'+ i +'" name="rating-'+ i +'" value="3" disabled '+ ischecked(3, review['rating']) +'><label for="star3-'+ i +'"></label>\
+                                        <input type="radio" id="star2-'+ i +'" name="rating-'+ i +'" value="2" disabled '+ ischecked(2, review['rating']) +'><label for="star2-'+ i +'"></label>\
+                                        <input type="radio" id="star1-'+ i +'" name="rating-'+ i +'" value="1" disabled '+ ischecked(1, review['rating']) +'><label for="star1-'+ i +'"></label>\
+                    </div>\
+                </div>\
+            </div>\
+            <div class="review-content">\
+                '+ review['content'] +'\
+            </div>\
+            '
+
+        review_item_result += review_item;
+    }
+
+    $('#review-container').html(review_item_result);
+    
+}
+renderReview();
+
+
+
+
+
+</script>
+
+</body>
+</html>

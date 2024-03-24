@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "106592443492",
+    "firebase_url": "https://shemin-a1158.firebaseio.com",
+    "project_id": "shemin-a1158",
+    "storage_bucket": "shemin-a1158.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106592443492:android:3fe5c815577dba2a861371",
+        "android_client_info": {
+          "package_name": "com.example.projectshemin2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106592443492-amm10rnfn5kj9muroac8f9m5ttvt33as.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkBCqpH8ioFWdqArg_L2Zpad0K0wiwjPw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106592443492-amm10rnfn5kj9muroac8f9m5ttvt33as.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

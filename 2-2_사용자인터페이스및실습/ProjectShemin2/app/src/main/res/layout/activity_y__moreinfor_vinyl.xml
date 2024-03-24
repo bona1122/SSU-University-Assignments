@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Y_Moreinfor_vinyl">
+
+    <ScrollView
+        android:id="@+id/ScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="16sp"
+            android:paddingRight="16sp"
+            android:paddingTop="16sp"
+            android:orientation="vertical" >
+
+            /* 맨위 시작 */
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:orientation="horizontal"
+                android:paddingLeft="16sp"
+                android:paddingTop="16sp"
+                android:paddingRight="16sp">
+
+                <ImageView
+                    android:id="@+id/image_paper"
+                    android:layout_width="33sp"
+                    android:layout_height="33sp"
+                    android:src="@drawable/markvinyl" />
+
+                <TextView
+                    android:id="@+id/text_paper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10sp"
+                    android:text="비닐류"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+            /* 주 내용 */
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16sp"
+                android:paddingTop="10sp"
+                android:paddingBottom="50sp"
+                android:paddingRight="16sp">
+
+                /* PET */
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5sp"
+                        android:text="| 비닐포장재,1회용비닐봉투"
+                        android:textSize="16sp"
+                        android:textColor="@color/vinyl"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="· 재활용 마크 아래의 재질을 확인하여 종류별로 배출"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="· 내용물을 버리고 이물질을 제거한 후 배출"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="· 흩날리지 않도록 봉투에 담아 배출"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="10sp"
+                        android:paddingBottom="10sp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/vi1" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="뽁뽁이는 비닐로 배출 가능"
+                        android:textAlignment="center"
+                        android:background="@color/vinyl"
+                        android:textSize="13sp"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_horizontal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="10sp"
+                        android:paddingBottom="10sp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="170sp"
+                            android:src="@drawable/vinylpopo" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            /*인덴트 버튼*/
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="235dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#615B67"
+                android:text="검색창으로"
+                android:textColor="#FFF"
+                android:textSize="23dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

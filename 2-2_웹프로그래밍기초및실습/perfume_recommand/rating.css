@@ -1,0 +1,53 @@
+:root {
+    --star-width: 20px;
+}
+
+.rating {
+    display: inline-block;
+}
+
+.rating-input {
+    transform: rotateY(180deg);
+    display: flex;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    display: block;
+    cursor: pointer;
+    width: var(--star-width);
+    padding-left: 10px;
+}
+
+.rating label::before {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: relative;
+    display: block;
+    font-size: var(--star-width);
+    color: #999999;
+}
+
+.rating label::after {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: var(--star-width);
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    display: block;
+    color: #fc6600;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.rating label:hover::after,
+.rating label:hover ~ label::after,
+.rating input:checked ~ label::after {
+    opacity: 1;
+}

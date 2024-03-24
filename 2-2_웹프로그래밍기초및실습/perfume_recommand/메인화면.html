@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for FUME</title>
+    <style>
+        @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css); /*나눔스퀘어 폰트*/
+        body{
+        font-family: "나눔스퀘어_ac Regular";
+        }
+        
+        a{ text-decoration: none;
+        color: black;
+        }
+        /* .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .navbar_menu {
+            display: flex;
+            list-style: none;
+            margin-left: 0px;
+        } */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+        }
+        .navbar_menu {
+            display: flex;
+            list-style: none;
+            margin-left: 400px;
+        }
+        .navbar_menu li{
+            padding: 8px 30px;
+        }
+        .navbar_logo{
+            font-family: "나눔스퀘어_ac ExtraBold";
+            font-size: 20px;
+        }
+        #pick-link {cursor: pointer;}
+        #user-name {float: right; margin:0 20px 0 5px; }
+        #login-logout-btn {float: right; cursor: pointer;}
+        .picture {background-image:url('media/main.png'); width: 100%; height: 350px; position: relative;}
+        .box23 {width: 100%; display: flex; justify-content: center; margin: 100px 0 ;}
+        .box2 {
+            background-image:url("media/red perfume.jpg");
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            text-align: center; 
+        }
+        .box3 {
+            background-image:url("media/search.jpg");
+            background-size: cover; 
+            width: 300px;   
+            height: 300px;
+            border: 1px solid black;
+            text-align: center;
+
+        }
+        .box { margin : 0 60px; position: relative;}
+        .box-inner { 
+            width: 200px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            top : 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+        }
+        .box-text { 
+            width: 150px;
+            position: absolute;
+            top : 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            }
+
+        .picture-outer {
+            width : 500px;
+            height: 200px;
+            background : #425134;
+            color : #ffffff;
+            text-align : center;
+
+            position: absolute;
+            top : 50%;
+            left : 50%;
+            transform: translate(-50%, -50%);
+
+            padding: 10px;
+        }
+
+        .picture-inner {
+            box-sizing: border-box;
+            width : 100%;
+            height: 100%;
+            border : solid 1px #5f6954;
+            font-size: 30px;
+            padding: 60px 0 ;
+            color : #ffffff;
+        }
+        body{
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <script src="http://code.jquery.com/jquery-latest.min.js">  //맨밑에 로그인,로그아웃 js를 쓰려면 무조건 적어야 함 
+    </script> 
+
+    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"> //폰트쓰는 데 사용
+    </script> 
+
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="메인화면.html">forFUME</a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="matching_flavor.html">맞춤향수찾기</span></li>
+            <li><a href="information.html">이론</a></li>
+            <li><a href="search.html">향수검색</a></li>
+            <li><span id="pick-link" OnClick="location.href='찜목록.html'">찜목록</span></li>
+        </ul>
+        <div class="navbar_login">
+            <i class="far fa-user"></i>
+            <div id="login-logout-btn"></div>
+            <div id="user-name" ></div>
+            </div>
+    </nav>
+
+    
+    <div class="picture">
+        <div class="picture-outer">
+            <a href="#">
+                <div id="user-icon" class="picture-inner" onclick="location.href='matching_flavor.html'">어떤 향수를 원하시나요? <br> Click!</div>
+            </a>           
+        </div>
+    </div>
+    <div class="box23">
+        <a href="information.html">
+        <div class="box2 box">
+            <div class="box-inner">
+            <div class="box-text">
+            향수 기초상식<br> 살펴보기
+        </div>
+        </div>
+        </div>
+        </a>
+        <a href="search.html">
+        <div class="box3 box">
+            <div class="box-inner">
+                <div class="box-text">
+                제품 후기 보기
+            </div>
+            </div>
+        </div>        
+        </a>
+    </div>
+    <script src="main.js">
+        /* 로그인,로그아웃 하는 함수 & <nav> 찜목록 버튼 로그인상태에 따라 다르게 반응(로그인 된 상태에서만 접근가능)
+        모든 페이지에 필요함(body 맨 밑부분에 script 넣으면 됨) */
+    </script> 
+</body>
+</html>

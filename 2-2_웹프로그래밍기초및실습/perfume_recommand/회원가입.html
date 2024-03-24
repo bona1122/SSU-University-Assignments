@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+
+    <style>
+        @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+        body{ font-family: "나눔스퀘어_ac Regular"; margin-right: 0%; margin-left: 0%;}
+        
+        a{ text-decoration: none;
+        color:black;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+        }
+        .navbar_menu {
+            display: flex;
+            list-style: none;
+            margin-left: 400px;
+        }
+        .navbar_menu li{
+            padding: 8px 30px;
+        }
+        .navbar_logo{
+            font-family: "나눔스퀘어_ac ExtraBold";
+            font-size: 20px;
+        }
+        #pick-link {cursor: pointer;}
+        #user-name {float: right; margin:0 20px 0 5px; }
+        
+        #login-logout-btn {float: right; cursor: pointer;}
+
+        .picture {width: 100%;}
+
+        img {width:100%; height: 100%;}
+
+        fieldset{width: 430px; margin:30px auto;border: 0;}
+
+        legend{font-size: 30px; text-align: center;}
+
+        input{height:60px; width: 400px; margin:10px; font-size: 20px; background: rgb(232, 235, 232); border: 0;}
+
+        .register-btn {
+            width: 170px;
+            height: 50px;
+            background: #425134;
+            border: solid 1px #425134;
+            color: #ffffff;
+
+            box-sizing: border-box;
+            text-align: center;
+            padding: 15px 0;
+            cursor: pointer;    
+
+            margin: 10px auto;
+            transition: .5s;
+        }
+
+
+
+        .register-btn:hover {
+            background: #ffffff;  
+            color: #425134;
+            transition: .5s;
+        }
+        #pick-link { cursor: pointer;}
+    </style>
+
+</head>
+
+<body>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="메인화면.html">forFUME</a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="matching_flavor.html">맞춤향수찾기</span></li>
+            <li><a href="information.html">이론</a></li>
+            <li><a href="search.html">향수검색</a></li>
+            <li><span id="pick-link" OnClick="location.href='찜목록.html'">찜목록</span></li>
+        </ul>
+        <div class="navbar_login">
+            <i class="far fa-user"></i>
+            <div id="login-logout-btn"></div>
+            <div id="user-name" ></div>
+            </div>
+    </nav>
+
+        <img class="picture" src="media/login.png">
+</img>
+
+    <form>
+        <fieldset>
+
+            <legend>회원가입 하기</legend>
+
+            <hr>
+
+
+            <div class="content">
+            <input type="text" placeholder="이메일ID 입력" required name= "email" id="email">
+            </div>
+
+
+
+
+            <div class="content">
+            <input type="password" id="password_1" class="pw" placeholder="비밀번호 설정" required>
+            </div>
+
+
+
+
+            <div class="content">
+            <input type="password" id="password_2" class="pw" placeholder="비밀번호 확인" required>
+            <span id="alert-success" style="display: none; color:blue; font-weight: bold;">비밀번호가 일치합니다.</span>
+            <span id="alert-danger" style="display: none; color: red; font-weight: bold; ">비밀번호가 일치하지 않습니다.</span>
+            </div>
+
+
+
+
+            <div class="content">
+            <input type="text" placeholder="닉네임 설정" required id="nickname">
+            </div>
+
+            <div class="register-btn" id="register-btn">
+            회원가입
+            </div>
+
+        </fieldset>
+
+    </form>
+
+    <script>
+        /* 비밀번호 유효성 검사*/
+        $('.pw').focusout(function () {
+            var pwd1 = $("#password_1").val();
+            var pwd2 = $("#password_2").val();
+            if ( pwd1 != '' && pwd2 == '' ) {
+                null;
+            } else if (pwd1 != "" || pwd2 != "") {
+                if (pwd1 == pwd2) {
+                    $("#alert-success").css('display', 'inline-block');
+                    $("#alert-danger").css('display', 'none');
+                } else {
+                    alert("비밀번호가 일치하지 않습니다. 비밀번호를 재확인해주세요.");
+                    $("#alert-success").css('display', 'none');
+                    $("#alert-danger").css('display', 'inline-block');
+                }
+            }
+        });
+
+        /* 회원정보 저장 */
+        $('#register-btn').click(function() {
+            var email = $('#email').val();
+            var password = $('#password_1').val();
+            var nickname = $('#nickname').val();
+
+            var user = {
+                'email': email,
+                'password': password,
+                'nickname': nickname
+            }
+
+            var user_list_json = localStorage.getItem("user_info");
+            var user_list = new Array();
+
+            if(user_list_json) {
+                user_list = JSON.parse(user_list_json); 
+            }
+
+            user_list.push(user);
+
+            user_list_json = JSON.stringify(user_list);
+            localStorage.setItem('user_info', user_list_json);
+
+
+            alert('회원가입이 완료되었습니다');
+            location.href = "메인화면.html";
+        })
+
+</script>
+
+<script src="main.js"></script>
+</body>
+
+</html>
+
+

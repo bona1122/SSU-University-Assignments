@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* img {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            margin-left: 25px;
+            margin-right: 25px;
+            justify-content: space-between;
+            cursor: pointer;
+        } */
+        div.caption {
+            display: inline-block;
+            width: 198px;
+            height: 30px;
+            margin-left: 25px;
+            margin-right: 25px;
+            text-align: center;
+            border-style:groove;
+            border-color:slategrey;
+            border-width: 1px;
+            background-color: beige;
+            padding-top: 7px;
+            cursor: pointer;
+        }
+        /* img:hover {
+            box-shadow: 1px 1px 1px black;
+        } */
+        .caption:hover{
+            box-shadow: 1px 1px 1px black;
+        }
+        div.info {
+            display: inline-block;
+            width: 198px;
+            height: 20px;
+            margin-left: 25px;
+            margin-right: 25px;
+            text-align: center;
+            margin-bottom: 100px;
+            vertical-align: top;
+        }
+        button {
+            height: 40px;
+            width: 100px;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+        }
+        h2{
+            text-align: center;
+            display:block;
+            
+        }
+        ul{
+            display: inline;
+        }
+        li{
+            display: inline;
+        }
+        
+        #searchUpperBar{
+            width: fit-content;
+        }
+        body{
+            margin-left: 0;
+            margin-right: 0;
+            font-family: "나눔스퀘어_ac Regular";
+        }
+        img#searchUpperBar{
+            margin-left: 0%;
+            max-width: 100%;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+        }
+        .navbar_menu {
+            display: flex;
+            list-style: none;
+            margin-left: 400px;
+        }
+        .navbar_menu li{
+            padding: 8px 30px;
+        }
+        .navbar_logo{
+            font-family: "나눔스퀘어_ac ExtraBold";
+            font-size: 20px;
+        }
+        #user-name {float: right; margin:0 20px 0 5px; }
+        #login-logout-btn {float: right; cursor: pointer;}
+
+        body{
+            font-family: "나눔스퀘어_ac Regular";
+        }
+        a{ text-decoration: none;}
+        hr {
+            margin-left: 300px;
+            margin-right: 300px;
+        }
+        a:visited{  /*링크다녀온거 보라색 표시 없애기 */
+            color: black;
+        }
+        #pick-link {cursor: pointer;}
+    </style>
+    <script>
+        function price(id) {
+            localStorage.setItem("price", id);
+        }
+        function next() {
+            location.href="matching_season.html";
+        }
+        function before() {
+            location.href="matching_gender.html";
+        }
+    </script>
+</head>
+<body>
+    <script src="http://code.jquery.com/jquery-latest.min.js">  //맨밑에 로그인,로그아웃 js를 쓰려면 무조건 적어야 함 
+    </script> 
+    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="메인화면.html">forFUME</a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="matching_flavor.html">맞춤향수찾기</span></li>
+            <li><a href="information.html">이론</a></li>
+            <li><a href="search.html">향수검색</a></li>
+            <li><span id="pick-link" OnClick="location.href='찜목록.html'">찜목록</span></li>
+        </ul>
+        <div class="navbar_login">
+            <i class="far fa-user"></i>
+            <div id="login-logout-btn"></div>
+            <div id="user-name" ></div>
+            </div>
+    </nav>
+
+    <img id="searchUpperBar" src="media/searchUpperBar.png" alt="상단바 구분 이미지">
+    <h2><pre> </pre></h2>
+    <h2><pre> </pre></h2>
+    <h2>어떤 가격대의 향수를 원하시나요?</h2>
+    <hr>
+    <h2><pre> </pre></h2>
+    <div style="text-align: center;">
+        
+        <div class="caption" id="5" onclick="price(this.id)">5만원 이하</div>
+        <div class="caption" id="10" onclick="price(this.id)">5~10만원</div>
+        <div class="caption" id="20" onclick="price(this.id)">10~20만원</div>
+        <br>
+        <h2><pre> </pre></h2>
+        <div class="caption" id="40" onclick="price(this.id)">20~40만원</div>
+        <div class="caption" id="50" onclick="price(this.id)">40만원 이상</div>
+    </div>
+    <h2><pre> </pre></h2>
+    <h2><pre> </pre></h2>
+    <div style="text-align: center;">
+        <button type="button" style="margin-right: 10px;" onclick="before()">이전</button>
+        <button type="button" style="margin-left: 10px;" onclick="next()">다음</button>
+    </div>
+    <h2><pre> </pre></h2>
+    <h2><pre> </pre></h2>
+    <script src="main.js">
+        /* 로그인,로그아웃 하는 함수 & <nav> 찜목록 버튼 로그인상태에 따라 다르게 반응(로그인 된 상태에서만 접근가능)
+            -> 모든 페이지에 필요함(body 맨 밑부분에 script 넣으면 됨) */
+    </script> 
+</body>
+</html>

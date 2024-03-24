@@ -1,0 +1,50 @@
+#!/bin/bash
+#task2
+echo -n input month:
+read month
+echo -n input day:
+read day
+ 
+sum_of_day=0
+day_of_the_week=0
+for((i=1;i<=12;i++));do
+        if [ $i -eq $month ];
+        then
+                let sum_of_day+=day
+                echo sum_of_day: $sum_of_day
+                break
+        else
+                let r=i%2
+                if [ $i -eq 2 ];
+                then
+                        let sum_of_day+=28
+                elif [ $i -lt 8 ];
+                then
+                        if [ $r -eq 0 ];
+                        then
+                                let sum_of_day+=30
+                        else
+                                let sum_of_day+=31
+                        fi
+else
+                        if [ $r -eq 0 ];
+                        then
+                                let sum_of_day+=31
+                        else
+                                let sum_of_day+=30
+                        fi
+                fi
+        fi
+done
+ 
+let day_of_the_week=sum_of_day%7
+ 
+case $day_of_the_week in
+        "0") echo thursday;;
+        "1") echo friday;;
+        "2") echo saturday;;
+        "3") echo sunday;;
+        "4") echo monday;;
+        "5") echo tuesday;;
+        "6") echo wednesday;;
+esac                

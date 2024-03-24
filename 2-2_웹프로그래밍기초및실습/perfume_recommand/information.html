@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forFume 향수 검색</title>
+    <style>
+        h2{
+            margin-left: 6em;
+            display:inline-block;
+        }
+        ul{
+            display: inline;
+        }
+        li{
+            display: inline;
+        }
+        #searchUpperBar{
+            width: fit-content;
+        }
+        body{
+            /* position: relative; */
+            margin-left: 0;
+            margin-right: 0;
+            align-content: center;
+            font-family: "나눔스퀘어_ac Regular";
+        }
+        img#searchUpperBar{
+            max-width: 100%;
+        }
+        #body2{
+            padding: 0em 13em;
+            align-content: center;
+            margin: auto;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+        }
+        .navbar_menu {
+            display: flex;
+            list-style: none;
+            margin-left: 400px;
+        }
+        .navbar_menu li{
+            padding: 8px 30px;
+        }
+        .navbar_logo{
+            font-family: "나눔스퀘어_ac ExtraBold";
+            font-size: 20px;
+        }
+        #user-name {float: right; margin:0 20px 0 5px; }
+        #login-logout-btn {float: right; cursor: pointer;}
+        a{ text-decoration: none;}
+        a:visited{  /*링크다녀온거 보라색 표시 없애기 */
+            color: black;
+        }
+        #information{
+            width: 100%;
+        }
+        #pick-link {cursor: pointer;}
+    </style>
+</head>
+<body>
+    <script src="http://code.jquery.com/jquery-latest.min.js">  //맨밑에 로그인,로그아웃 js를 쓰려면 무조건 적어야 함 
+    </script> 
+    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <!-- <h2>forFume</h2>
+    <ul id="menu">
+        <li id="myPerfume">맞춤향수찾기</li>
+        <li id="study">이론</li>
+        <li id="searchPerfume">향수검색</li>
+    </ul>
+    <ul id="user">
+        <li>로그인</li>
+        <li>회원가입</li>
+    </ul> -->
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="메인화면.html">forFUME</a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="matching_flavor.html">맞춤향수찾기</span></li>
+            <li><a href="information.html">이론</a></li>
+            <li><a href="search.html">향수검색</a></li>
+            <li><span id="pick-link" OnClick="location.href='찜목록.html'">찜목록</span></li>
+        </ul>
+        <div class="navbar_login">
+            <i class="far fa-user"></i>
+            <div id="login-logout-btn"></div>
+            <div id="user-name" ></div>
+            </div>
+    </nav>
+    <img id="searchUpperBar" src="media/searchUpperBar.png" alt="상단바 구분 이미지">
+    <div id="body2">
+        <img src="media/information_page.png" alt="" id="information">
+    </div>
+    <script src="main.js">
+        /* 로그인,로그아웃 하는 함수 & <nav> 찜목록 버튼 로그인상태에 따라 다르게 반응(로그인 된 상태에서만 접근가능)
+            ---> 모든 페이지에 필요함(body 맨 밑부분에 script 넣으면 됨) */
+    </script> 
+</body>
+</html>

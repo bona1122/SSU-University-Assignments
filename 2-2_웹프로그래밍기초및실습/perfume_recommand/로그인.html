@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 화면</title>
+    <style>
+        @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+        body{font-family: "나눔스퀘어_ac Regular"; margin-left: 0%; margin-right: 0%;}
+        
+        a{ text-decoration: none;
+            color: black;
+            }
+            .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+        }
+        .navbar_menu {
+            display: flex;
+            list-style: none;
+            margin-left: 400px;
+        }
+        .navbar_menu li{
+            padding: 8px 30px;
+        }
+        .navbar_logo{
+            font-family: "나눔스퀘어_ac ExtraBold";
+            font-size: 20px;
+        }
+        #pick-link { cursor: pointer;}
+
+        #user-name {float: right; margin:0 20px 0 5px; }
+        #login-logout-btn {float: right; cursor: pointer;}
+
+        .picture {width: 100%; }
+        h2 {text-align: center; font-size: 35px; margin: 0;}
+        .login { width: 510px; margin-top: auto;}
+        hr { color: #111;}
+        input {height:60px; width: 470px; margin:15px; font-size:20px; background: rgb(232, 235, 232); border: 0;}
+
+        .footer { 
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            margin: 10px 0 ;
+            }
+
+        .register-btn {
+            display: inline-block;
+            width: 220px;
+            height: 50px;
+            text-decoration: none; 
+            color: white;
+            background: rgb(241, 166, 68);
+            border: 1px solid  rgb(241, 166, 68);
+            padding: 15px, 0;
+            box-sizing: border-box;
+            text-align: center;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: .5s;
+            }
+
+            .register-btn:hover {
+            background: #ffffff;  
+            color: rgb(241, 166, 68);
+            transition: .5s;
+        }
+
+            .register-text {
+                font-size: 20px;
+                margin: 10px auto;
+            }
+
+            .login-btn {
+            display: inline-block;
+            width: 220px;
+            height: 50px;
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            background: rgb(104, 124, 104); 
+            border: 1px solid  rgb(104, 124, 104);
+            padding: 15px, 0; 
+            box-sizing: border-box; 
+            text-align: center;
+            transition: .5s;
+            cursor: pointer;
+            line-height: 40px;
+            font-size: 20px;
+            }
+        
+        .login-btn:hover {
+            background: #ffffff;  
+            color: rgb(104, 124, 104);
+            transition: .5s;
+        }
+
+        legend{font-size: 30px; text-align: center; }
+        
+        fieldset{width: 430px; margin-top: 60px; margin-left: auto; margin-right: auto; border: 0;}
+    </style>
+</head>
+<body>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="메인화면.html">forFUME</a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="matching_flavor.html">맞춤향수찾기</span></li>
+            <li><a href="information.html">이론</a></li>
+            <li><a href="search.html">향수검색</a></li>
+            <li><span id="pick-link" OnClick="location.href='찜목록.html'">찜목록</span></li>
+        </ul>
+        <div class="navbar_login">
+            <i class="far fa-user"></i>
+            <div id="login-logout-btn"></div>
+            <div id="user-name" ></div>
+            </div>
+    </nav>
+    
+    <img class="picture" src="media/login.png">
+</img>
+    
+    <form>
+        <fieldset>
+            <legend>로그인</legend>
+            <hr>
+            <div class="content_content">
+            <input type="text" placeholder="이메일 ID 입력" required id="email">
+            </div>
+            <div class="content_content">
+            <input type="password" placeholder="비밀번호 입력" required id="password">
+            </div>
+            <div class="footer">
+                <a href="회원가입.html" >
+                    <div class="register-btn">
+                    <div class="register-text">
+                    회원가입
+                </div> 
+                </div>
+                </a>
+                <div id="login-btn" class="login-btn">
+                    로그인
+                </div>
+            </div>
+            </div></fieldset>      
+        </form>
+
+        <script>
+            $("#login-btn").click(function() {
+                // 1. input 데이터 가져오기
+                var email = $('#email').val();
+                var password = $('#password').val();
+
+                // 2. localstorage에서 유저 정보 가져오기
+                var user_list_json = localStorage.getItem('user_info');
+
+                var user_list = JSON.parse(user_list_json);
+
+                // 3. 유저 정보와 input 데이터 일치 체크
+                var login_user = null;
+
+                for(var i = 0; i < user_list.length; i++) {
+                    if(email === user_list[i].email && password === user_list[i].password) {
+                        login_user = user_list[i];
+                        break;
+                    }
+                }
+
+                if(login_user) {
+                    // 로그인 된 상태
+                    alert("로그인이 되었습니다");
+                    document.cookie = "login_user=" + login_user.nickname;
+                    location.href = "메인화면.html"
+                } else {
+                    // 로그인이 실패한 상태
+                    alert('로그인에 실패했습니다');
+                }
+            })
+        
+        </script>
+            <script src="main.js"></script>
+</body>
+</html>

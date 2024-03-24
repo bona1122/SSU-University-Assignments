@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forFume 향수 검색</title>
+    <style>
+        h2{
+            margin-left: 6em;
+            display:inline-block;
+        }
+        ul{
+            display: inline;
+        }
+        li{
+            display: inline;
+        }
+        
+        #searchUpperBar{
+            width: fit-content;
+        }
+        body{
+            /* position: relative; */
+            margin-left: 0;
+            margin-right: 0;
+            align-content: center;
+            font-family: "나눔스퀘어_ac Regular";
+        }
+        img#searchUpperBar{
+            max-width: 100%;
+        }
+        div.select{
+            width: 240px;
+            display: inline-block;
+            margin: 1em;
+            vertical-align: text-top;
+        }
+        span.subject{
+            text-align: center;
+            display: block;
+            padding: 0.3em 5.2em;
+            margin-bottom: 1em;
+            border-style: solid;
+            border-width: 0.1em;
+            border-color: gray;
+        }
+        #body2{
+            padding: 2em 13em;
+            align-content: center;
+            margin: auto;
+        }
+        span.sort{
+            color: gray;
+            cursor: pointer;
+        }
+        label{
+            display: block;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+        }
+        .navbar_menu {
+            display: flex;
+            list-style: none;
+            margin-left: 400px;
+        }
+        .navbar_menu li{
+            padding: 8px 30px;
+        }
+        a{ text-decoration: none;}
+
+        .perfume{
+            /*border-style: solid;*/ 
+            width: 209.8px;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        #perfumeImg{
+            border-style: solid;
+            border-width: 0.5px;
+        }
+        #별점순{
+            font-weight:bold;
+            color: black;
+        }
+        #rank{
+            border-style: solid;
+            border-color: gray;
+            width: 110px;
+            height: fit-content;
+            position: absolute;
+            top: 250px;
+            left: 1350px;
+            text-align: center;
+            padding: 10px;
+        }
+        .ranked_perfume{
+            width: 100%;
+        }
+        #date{
+            font-size: 14px;
+        }
+        #weekly_rank{
+            font-size: 14px;
+        }
+        .ranked_pefume_name{
+            align-content: center;
+            font-size: 14px;
+            width: 100%;
+            height: 20px;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+
+            /* display: -webkit-box;
+            -webkit-line-clamp: 1;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            word-wrap:break-word; 
+            line-height: 1em; */
+        }
+        #body3{
+            /* border-style: solid; */
+            align-content: center;
+        }
+        #star{
+            display: inline-block;
+        }
+        .rank_of_perfume{
+            cursor: pointer;
+        }
+        label{
+            cursor: pointer;
+        }
+        input[type=checkbox]{
+            cursor: pointer;
+        }
+        a:visited{  /*링크다녀온거 보라색 표시 없애기 */
+            color: black;
+        }
+        #select_info{
+            position: relative;
+        }
+        .navbar_logo{
+            font-family: "나눔스퀘어_ac ExtraBold";
+            font-size: 20px;
+        }
+
+
+        #pick-link {cursor: pointer;}
+        #user-name {float: right; margin:0 20px 0 5px; }
+        #login-logout-btn {float: right; cursor: pointer;}
+    </style>
+    
+    <script src="perfume.js">   //js파일 로딩
+    </script>
+    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+</head>
+<body onload="resultCheck();rankPerfume()">
+
+    <script src="http://code.jquery.com/jquery-latest.min.js">  //맨밑에 로그인,로그아웃 js를 쓰려면 무조건 적어야 함 
+    </script> 
+    <!-- <h2>forFume</h2>
+    <ul id="menu">
+        <li id="myPerfume">맞춤향수찾기</li>
+        <li id="study">이론</li>
+        <li id="searchPerfume">향수검색</li>
+    </ul>
+    <ul id="user">
+        <li>로그인</li>
+        <li>회원가입</li>
+    </ul> -->
+
+
+
+    <!-- <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="">forFUME</a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="">맞춤향수찾기</a></li>
+            <li><a href="">이론</a></li>
+            <li><a href="">향수검색</a></li>
+        </ul>
+        <div class="navbar_login">
+            <i class="far fa-user"></i>
+            <a href="">로그인</a>
+            </div>
+    </nav> -->
+
+
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="메인화면.html">forFUME</a>
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="matching_flavor.html">맞춤향수찾기</span></li>
+            <li><a href="information.html">이론</a></li>
+            <li><a href="search.html">향수검색</a></li>
+            <li><span id="pick-link" OnClick="location.href='찜목록.html'">찜목록</span></li>
+        </ul>
+        <div class="navbar_login">
+            <i class="far fa-user"></i>
+            <div id="login-logout-btn"></div>
+            <div id="user-name" ></div>
+            </div>
+    </nav>
+
+    <img id="searchUpperBar" src="media/searchUpperBar.png" alt="상단바 구분 이미지">
+        <div id="body2">
+            <div id="select_info">
+                <div class="select" id="season">
+                    <span class="subject">계절</span>
+                    <label for="봄">
+                        <input type="checkbox" name="seasonCheck" id="봄" onclick="SeasonCheckbox(this)" >봄
+                    </label>
+                    <label for="여름">
+                        <input type="checkbox" name="seasonCheck" id="여름" onclick="SeasonCheckbox(this)">여름
+                    </label>
+                    <label for="가을">
+                        <input type="checkbox" name="seasonCheck" id="가을" onclick="SeasonCheckbox(this)">가을
+                    </label>
+                    <label for="겨울">
+                        <input type="checkbox" name="seasonCheck" id="겨울" onclick="SeasonCheckbox(this)">겨울
+                    </label>
+                </div>
+
+                <div class="select" id="sex">
+                    <span class="subject">성별</span>
+                    <label for="여">
+                        <input type="checkbox" name="sexCheck" id="여" onclick="SexCheckbox(this)">여
+                    </label>
+                    <label for="남">
+                        <input type="checkbox" name="sexCheck" id="남" onclick="SexCheckbox(this)">남
+                    </label>
+                </div>
+
+                <div class="select" id="smell">
+                    <span class="subject">계열</span>
+                    <label for="시트러스">
+                        <input type="checkbox" name="categoryCheck" id="시트러스" onclick="CategoryCheckbox(this)">시트러스
+                    </label>
+                    <label for="플로럴">
+                        <input type="checkbox" name="categoryCheck" id="플로럴" onclick="CategoryCheckbox(this)">플로럴
+                    </label>
+                    <label for="프루티">
+                        <input type="checkbox" name="categoryCheck" id="프루티" onclick="CategoryCheckbox(this)">프루티
+                    </label>
+                    <label for="그린">
+                        <input type="checkbox" name="categoryCheck" id="그린" onclick="CategoryCheckbox(this)">그린
+                    </label>
+                    <label for="우디">
+                        <input type="checkbox" name="categoryCheck" id="우디" onclick="CategoryCheckbox(this)">우디
+                    </label>
+                    <label for="머스크">
+                        <input type="checkbox" name="categoryCheck" id="머스크" onclick="CategoryCheckbox(this)">머스크
+                    </label>
+                </div>
+
+                <div class="select" id="price">
+                    <span class="subject">가격</span>
+                    <label for="50000">
+                        <input type="checkbox" name="priceCheck" id="50000" onclick="PriceCheckbox(this)">5만원 이하
+                    </label>
+                    <label for="100000">
+                        <input type="checkbox" name="priceCheck" id="100000" onclick="PriceCheckbox(this)">5~10만원
+                    </label>
+                    <label for="200000">
+                        <input type="checkbox" name="priceCheck" id="200000" onclick="PriceCheckbox(this)">10~20만원
+                    </label>
+                    <label for="400000">
+                        <input type="checkbox" name="priceCheck" id="400000" onclick="PriceCheckbox(this)">20~40만원
+                    </label>
+                    <label for="500000">
+                        <input type="checkbox" name="priceCheck" id="500000" onclick="PriceCheckbox(this)">40만원 이상
+                    </label>
+                </div>
+            </div>
+            <hr />
+            <span class="sort" id ="별점순" onclick="sortClick(this)">별점 순</span> |
+            <span class="sort" id ="낮은가격순"onclick="sortClick(this)" >낮은 가격순</span> |
+            <span class="sort" id="높은가격순"onclick="sortClick(this)">높은 가격순</span>
+            <hr style="margin-bottom: 30px;" />
+
+            <div id="body3">   
+        </div>
+        
+        <!-- <div class="perfume">
+            <img src="media/chanel.jpg" width="200px" id="perfumeImg" alt="">
+            <span>perfume1</span><span>  106,000원</span>
+            <hr/>
+            <span>(15)</span>
+        </div>
+        <div class="perfume">
+            <img src="media/chanel.jpg" width="200px" id="perfumeImg" alt="">
+            <span>perfume1</span><span>  106,000원</span>
+            <hr/>
+            <span>(15)</span>
+        </div>
+        <div class="perfume">
+            <img src="media/chanel.jpg" width="200px" id="perfumeImg" alt="">
+            <span>perfume1</span><span>  106,000원</span>
+            <hr/>
+            <span>(15)</span>
+        </div>
+        <div class="perfume" style="margin-right: 0;">
+            <img src="media/chanel.jpg" width="200px" id="perfumeImg" alt="">
+            <span>perfume1</span><span>  106,000원</span>
+            <hr/>
+            <span>(15)</span>
+        </div>-->
+    </div>
+    <div id="rank">
+        <span id="date">2020.11.08 기준</span>
+        <hr>
+        <span id="weekly_rank">TOP3</span>
+        <hr>
+        <div id="rank1" class="rank_of_perfume">
+            <img src="media/chanel.jpg" class="ranked_perfume" alt="">
+            <span class="ranked_pefume_name">넘버원코롱오이푸치겁나귀여움</span>
+        </div>
+        <div id="rank2" class="rank_of_perfume">
+            <img src="media/chanel.jpg" class="ranked_perfume" alt="">
+            <span class="ranked_pefume_name">넘버투향수오이로이로도ㅑㅗ</span>
+        </div>  
+        <div id="rank3" class="rank_of_perfume">
+            <img src="media/chanel.jpg" class="ranked_perfume" alt="">
+            <span class="ranked_pefume_name">넘버어우하기싫어</span>
+        </div>
+    </div>
+
+    <script src="main.js">
+        /* 로그인,로그아웃 하는 함수 & <nav> 찜목록 버튼 로그인상태에 따라 다르게 반응(로그인 된 상태에서만 접근가능)
+            ---> 모든 페이지에 필요함(body 맨 밑부분에 script 넣으면 됨) */
+    </script> 
+</body>
+</html>

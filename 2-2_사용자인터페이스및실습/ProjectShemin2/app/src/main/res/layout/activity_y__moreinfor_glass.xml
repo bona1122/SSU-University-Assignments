@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Y_Moreinfor_glass">
+
+    <ScrollView
+        android:id="@+id/ScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="16sp"
+            android:paddingRight="16sp"
+            android:paddingTop="16sp"
+            android:orientation="vertical" >
+
+            /* 맨위 시작 */
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:orientation="horizontal"
+                android:paddingLeft="16sp"
+                android:paddingTop="16sp"
+                android:paddingRight="16sp">
+
+                <ImageView
+                    android:id="@+id/image_paper"
+                    android:layout_width="33sp"
+                    android:layout_height="33sp"
+                    android:src="@drawable/markglass" />
+
+                <TextView
+                    android:id="@+id/text_paper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10sp"
+                    android:text="유리병류"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+            /* 주 내용 */
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16sp"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:paddingRight="16sp">
+
+                /* 음료수병, 기타병류 파트*/
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5sp"
+                        android:text="| 음료수병,기타병류"
+                        android:textSize="16sp"
+                        android:textColor="@color/glass"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="· 내용물을 비우고 이물질을 제거하여 배출"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="· 병이 깨지지 않도록 배출"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="· 색상별 분리 배출이 가능한 경우, 색상별로 배출"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="· 상표를 제거 할 수 있는 경우, 상표를 제거후 배출"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="10sp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:src="@drawable/glassex" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                /* 보증금병 파트 */
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop ="25sp"
+                        android:paddingBottom="5sp"
+                        android:text="| 보증금병"
+                        android:textSize="16sp"
+                        android:textColor="@color/glass"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="· 소매점에 반납하여 보증금을 반환가능"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="· 병뚜껑과 라벨에 환불 문구 확인"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="· 내용물 비워서 반납"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:paddingTop="7sp"
+                        android:layout_height="wrap_content"
+                        android:text="*보증금 환불 거부 신고시 최대 5만원 보상*"
+                        android:textSize="16sp"
+                        android:textColor="@color/alert"/>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="10sp"
+                        android:orientation="vertical">
+
+
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="192dp"
+                            android:src="@drawable/paybackbottle" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text ="출처: 키즈 현대"
+                            android:layout_gravity="right"
+                            android:textSize="10sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="235dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="25sp"
+                android:background="#615B67"
+                android:text="검색창으로"
+                android:textColor="#FFF"
+                android:textSize="23dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

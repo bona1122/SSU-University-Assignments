@@ -1,0 +1,23 @@
+# 빌드 결과물
+Debug/
+Release/
+x64/
+x86/
+bin/
+obj/
+*.sdf
+*.opendb
+
+# Visual Studio 임시 파일 및 사용자별 설정
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# 다른 임시 파일
+*.log
+*.tlog
+*.tlog.*
+
+*.vcxproj.filters

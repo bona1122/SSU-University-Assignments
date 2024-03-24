@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Y_Moreinfor_paperpack">
+
+    <ScrollView
+        android:id="@+id/ScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="16sp"
+            android:paddingRight="16sp"
+            android:paddingTop="16sp"
+            android:orientation="vertical" >
+
+            /* 맨위 시작 */
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:orientation="horizontal"
+                android:paddingLeft="16sp"
+                android:paddingTop="16sp"
+                android:paddingRight="16sp">
+
+                <ImageView
+                    android:id="@+id/image_paper"
+                    android:layout_width="33sp"
+                    android:layout_height="33sp"
+                    android:src="@drawable/markpaperpack" />
+
+                <TextView
+                    android:id="@+id/text_paper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10sp"
+                    android:text="종이팩,종이컵"
+                    android:textSize="25sp"
+                    android:textColor="@color/paperpack"/>
+            </LinearLayout>
+
+            /* 주 내용 */
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16sp"
+                android:paddingTop="10sp"
+                android:paddingBottom="50sp"
+                android:paddingRight="16sp">
+
+                /*살균팩, 멸균팩 */
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5sp"
+                        android:text="| 살균팩,멸균팩"
+                        android:textSize="16sp"
+                        android:textColor="@color/paperpackDefault"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="1) 내용물을 비우고 물로 행군다"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="2) 압착하여 묶거나 봉투에 넣어 배출"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="종이팩과 다른 재질은 제거 후 배출"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="7sp"
+                        android:text="종이와 분류될 수 있도록 종이팩 전용수거함에 배출"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="10sp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="170sp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/paperpackex" />
+
+                        <ImageView
+                            android:layout_width="177sp"
+                            android:layout_height="181dp"
+                            android:src="@drawable/paperpackflip" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                /* 종이컵 */
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop ="25sp"
+                        android:paddingBottom="5sp"
+                        android:text="| 종이컵"
+                        android:textSize="16sp"
+                        android:textColor="@color/paperpackDefault"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="1) 내용물을 버린고 한번 헹군다"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="2) 차곡차곡 쌓아 봉지에 넣어 배출"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:paddingTop="7sp"
+                        android:layout_height="wrap_content"
+                        android:text="종이팩은 종이류와 다릅니다."
+                        android:textSize="16sp"
+                        android:textColor="@color/alert"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="10sp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="112sp"
+                            android:layout_height="95sp"
+                            android:src="@drawable/papercup"
+                            android:layout_gravity="center_vertical"/>
+
+                        <ImageView
+                            android:layout_width="230dp"
+                            android:layout_height="140dp"
+                            android:src="@drawable/howtopapercup" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20sp">
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="작은 종이 배출법: 서적 사이에 끼어 배출"
+                        android:textAlignment="center"
+                        android:background="@color/paperpackDefault"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="10sp"
+                        android:paddingBottom="10sp"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130sp"
+                        android:src="@drawable/smallpaper" />
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            /*인덴트 버튼*/
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="235dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#615B67"
+                android:text="검색창으로"
+                android:textColor="#FFF"
+                android:textSize="23dp"
+                android:layout_marginBottom="25sp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

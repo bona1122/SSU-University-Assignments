@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Y_Moreinfor_paper">
+
+    <ScrollView
+        android:id="@+id/ScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="16sp"
+            android:paddingRight="16sp"
+            android:paddingTop="16sp"
+            android:orientation="vertical" >
+
+            /* 맨위 시작 */
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:orientation="horizontal"
+                android:paddingLeft="16sp"
+                android:paddingTop="16sp"
+                android:paddingRight="16sp">
+
+                <ImageView
+                    android:id="@+id/image_paper"
+                    android:layout_width="33sp"
+                    android:layout_height="33sp"
+                    android:src="@drawable/re_paper" />
+
+                <TextView
+                    android:id="@+id/text_paper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10sp"
+                    android:text="종이"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            /* 주 내용 */
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16sp"
+                android:paddingTop="10sp"
+                android:paddingBottom="50sp"
+                android:paddingRight="16sp">
+
+                /*신문지 파트*/
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5sp"
+                        android:text="| 신문지"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="1) 물에 젖으면 안됨"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="2) 반드시 펴서 차곡차곡 모아서 배출"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="7sp"
+                        android:text="신문지가 아닌 것들 : 비닐로 코딩된 광고지, 비닐"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="10sp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="170sp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/newspaper" />
+
+                        <ImageView
+                            android:layout_width="177sp"
+                            android:layout_height="114sp"
+                            android:src="@drawable/noads" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                /* 책자, 노트 파트 */
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop ="25sp"
+                        android:paddingBottom="5sp"
+                        android:text="| 책자, 노트"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="1) 비닐로 코딩된 표지 제거"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="2) 공책의 스프링 제거"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:paddingTop="7sp"
+                        android:layout_height="wrap_content"
+                        android:text="* 비닐 포장지는 제외"
+                        android:textSize="16sp"
+                        android:textColor="@color/alert"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="10sp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="112sp"
+                            android:layout_height="95sp"
+                            android:src="@drawable/notes" />
+
+                        <ImageView
+                            android:layout_width="112sp"
+                            android:layout_height="95sp"
+                            android:src="@drawable/notes2" />
+
+                        <ImageView
+                            android:layout_width="112sp"
+                            android:layout_height="95sp"
+                            android:src="@drawable/notes3" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                /* 상자 파트 */
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop ="25sp"
+                        android:paddingBottom="5sp"
+                        android:text="| 상자(골판지 상자)"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="1) 비닐로 코딩된 부분 제거"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="2) 포장에 사용된 테이프,철핀 제거"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="345sp"
+                        android:layout_height="wrap_content"
+                        android:text="3) 운반에 용이하게 묶어서 배출"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="10sp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="170sp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/box" />
+
+                        <ImageView
+                            android:layout_width="177sp"
+                            android:layout_height="114sp"
+                            android:src="@drawable/boxflip" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="235dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#615B67"
+                android:text="검색창으로"
+                android:textColor="#FFF"
+                android:textSize="23dp"
+                android:layout_marginBottom="25sp"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
