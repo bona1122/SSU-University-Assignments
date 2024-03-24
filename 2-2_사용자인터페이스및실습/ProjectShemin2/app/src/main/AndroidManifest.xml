@@ -20,31 +20,41 @@
         <activity android:name=".Y_Moreinfor_ironcan" />
         <activity android:name=".Y_Moreinfor_vinyl" />
         <activity android:name=".Y_Moreinfor_paper" />
-        <activity android:name=".Result">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:exported="true"
+            android:name=".Result">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
-        <activity android:name=".Location_dong">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:exported="true"
+            android:name=".Location_dong">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
-        <activity android:name=".Location">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:name=".Location"
+            android:exported="true"
+            >
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".FirebasePost"
             tools:ignore="Instantiatable" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true"
+            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
